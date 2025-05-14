@@ -42,18 +42,18 @@ function updateTime() {
   tokyoTimeElement.innerHTML = moment()
     .tz("Asia/Tokyo")
     .format("h:mm:ss [<small>]A[</small>]");
+
+  //Paris
+
+  let parisElement = document.querySelector("#paris");
+  let parisDateElement = parisElement.querySelector(".date");
+  let parisTimeElement = parisElement.querySelector(".time");
+
+  parisDateElement.innerHTML = moment().format("MMMM Do YYYY");
+  parisTimeElement.innerHTML = moment()
+    .tz("Europe/Paris")
+    .format("h:mm:ss [<small>]A[</small>]");
 }
-
-//Paris
-
-let parisElement = document.querySelector("#paris");
-let parisDateElement = parisElement.querySelector(".date");
-let parisTimeElement = parisElement.querySelector(".time");
-
-parisDateElement.innerHTML = moment().format("MMMM Do YYYY");
-parisTimeElement.innerHTML = moment()
-  .tz("Europe/Paris")
-  .format("h:mm:ss [<small>]A[</small>]");
 
 function updateCity(event) {
   event.preventDefault();
